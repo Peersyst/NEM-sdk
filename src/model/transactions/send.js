@@ -24,7 +24,7 @@ let send = function(common, entity, endpoint) {
         'data': Convert.ua2hex(result),
         'signature': signature.toString()
     };
-    return Requests.transaction.announce(endpoint, JSON.stringify(obj));
+    return {response: Requests.transaction.announce(endpoint, JSON.stringify(obj)), signature: signature};
 }
 
 export default send;
